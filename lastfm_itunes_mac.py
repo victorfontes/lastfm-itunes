@@ -5,7 +5,7 @@
 #Website: http://victorfontes.com
 #January 2010
 
-#This script will make playlists based on info thats avalilable through lastfm`s public API
+#This script will make playlists based on info thats avalilable on lastfm`s public API
 # you`ll need appscrpit: sudo easy_install appscript
 
 
@@ -60,8 +60,8 @@ class ITunesPlaylistManager():
 		else:
 			self.itunes.add(track.location(), to=self.itunes.playlists[self.playlist])
 
-lastfm = LastfmPublicData('come_here')
-tracks_str = lastfm.strings_by_method('loved_tracks')
+lastfm = LastfmPublicData(u'come_here')
+tracks_str = lastfm.strings_by_method(u'loved_tracks')
 itunes = ITunesPlaylistManager(u'Loved Tracks')
 for track_str in tracks_str:
 	track = itunes.find_tracks_in_library(track_str)
